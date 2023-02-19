@@ -9,3 +9,5 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL,
     is_enabled TINYINT(1) NOT NULL DEFAULT 1
 );
+
+INSER INTO users (name, login, password) VALUES ('Administrador','admin','admin');

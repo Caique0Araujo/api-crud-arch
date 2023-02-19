@@ -12,6 +12,7 @@ import { deleteUserController } from '../../factories/controllers/user/delete';
 const router = Router();
 
 router.post('/login', adaptRoute(loginController()));
+router.use(authenticateRoute);
 router.post('/create', adaptRoute(createUserController()));
 router.get('/getById/:id', adaptRoute(getUserByIdController()));
 router.get('/getByToken', adaptRoute(getUserByTokenController()));
