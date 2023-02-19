@@ -1,4 +1,4 @@
-# api-crud-arch
+# API-CRUD-ARCH
 
 ## Sobre
 
@@ -14,9 +14,10 @@ Utilizei a arquitetura limpa + DDD, usei de base um template apresentado por Rod
 - Sequelize
 - Bcrypt
 - JWT
+- MySQL
 
 ## Observações
 
 Para rodar rodar a API é preciso criar o banco através do script.sql e configurar o .env de acordo com as suas preferências.
 
-Essa API foi montada para servir de base para próximos projetos, sintam se livres para comentar e dar opiniões, eu adoraria aprender mais sobre o desenvolvimento com nodejs
+Essa API foi montada para servir de base para próximos projetos, sintam se livres para comentar e dar opiniões, eu adoraria aprender mais sobre o desenvolvimento com nodejs :D
