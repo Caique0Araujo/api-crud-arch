@@ -1,5 +1,5 @@
 import { LoginUseCase } from "../../../domain/useCases/user/login";
-import { generateJwtToken } from "../../../helpers/token/generateJwt";
+import { generateJwtToken } from "../../../infra/helpers/token/JWT/generateJwt";
 import { expireDate } from "../../../main/config/jwt";
 import { Controller } from "../controller";
 import { badRequest, HttpResponse, login } from "../http";

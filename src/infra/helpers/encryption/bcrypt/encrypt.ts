@@ -1,4 +1,4 @@
-import { EncryptPasswordRepository } from './../../data/interfaces/encryptation/encryptPasswordRepository';
+import { EncryptPasswordRepository } from '../../../../data/interfaces/encryptation/encryptPasswordRepository';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv'
 

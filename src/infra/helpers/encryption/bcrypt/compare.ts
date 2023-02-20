@@ -1,4 +1,4 @@
-import { ComparePasswordsRepository } from './../../data/interfaces/validation/comparePasswordsRepository';
+import { ComparePasswordsRepository } from '../../../../data/interfaces/validation/comparePasswordsRepository';
 import bcrypt from 'bcrypt';
 
 export class ComparePasswordsRepositoryBcrypt implements ComparePasswordsRepository {

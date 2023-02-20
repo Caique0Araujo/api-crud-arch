@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
-import { expireDate } from '../../main/config/jwt';
+import { expireDate } from '../../../../main/config/jwt';
 
 
 dotenv.config();

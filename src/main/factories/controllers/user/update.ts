@@ -1,6 +1,6 @@
 import { GetUserByLoginRepositorySequelize } from './../../../../infra/repositories/sequelize/user/getByLogin';
 import { UpdateUserService } from "../../../../data/services/user/update";
-import { EncryptPasswordRepositoryBcrypt } from "../../../../helpers/encryption/encrypt";
+import { EncryptPasswordRepositoryBcrypt } from "../../../../infra/helpers/encryption/bcrypt/encrypt";
 import { UpdateUserRepositorySequelize } from "../../../../infra/repositories/sequelize/user/update";
 import { Controller } from "../../../../presentation/controllers/controller";
 import { UpdateUserController } from "../../../../presentation/controllers/user/update";

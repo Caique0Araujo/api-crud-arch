@@ -4,7 +4,7 @@ import { CreateUserRepositorySequelize } from "../../../../infra/repositories/se
 import { LoginValidationRepositorySequelize } from "../../../../infra/repositories/sequelize/validation/login";
 import { Controller } from "../../../../presentation/controllers/controller";
 import { CreateUserController } from "../../../../presentation/controllers/user/create";
-import { EncryptPasswordRepositoryBcrypt } from '../../../../helpers/encryption/encrypt';
+import { EncryptPasswordRepositoryBcrypt } from '../../../../infra/helpers/encryption/bcrypt/encrypt';
 
 export const createUserController = (): Controller => {
   const userRpository = new CreateUserRepositorySequelize();

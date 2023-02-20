@@ -1,5 +1,5 @@
+import { verifyJwtToken } from './../../infra/helpers/token/JWT/verifyJwt';
 import env  from "dotenv";
-import { verifyJwtToken } from '../../helpers/token/verifyJwt';
 
 env.config();
 
