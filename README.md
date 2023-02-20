@@ -6,7 +6,7 @@ Essa é uma api simples com um CRUD baseado em usuário, é possível fazer o lo
 
 ## Arquitetura
 
-Utilizei a arquitetura limpa + DDD, usei de base um template apresentado por Rodrigo Manguinho em uma live no canal do Rodrigo Branas (https://www.youtube.com/watch?v=P0gpCCA8ZPs&t=3941s).
+Utilizei a arquitetura limpa, usei de base um template apresentado por Rodrigo Manguinho em uma live no canal do Rodrigo Branas (https://www.youtube.com/watch?v=P0gpCCA8ZPs&t=3941s).
 
 ## Tecnologias utilizadas
 
@@ -15,6 +15,7 @@ Utilizei a arquitetura limpa + DDD, usei de base um template apresentado por Rod
 - Bcrypt
 - JWT
 - MySQL
+- Typescript
 
 ## Observações
 
