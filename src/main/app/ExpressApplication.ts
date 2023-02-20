@@ -1,6 +1,5 @@
 import { Application } from "./Application";
 import express from "express";
-import router from "../routes/express-routes/setupRoutes";
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv'
@@ -8,11 +7,15 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-import { databaseFactory } from "../factories/app/setDatabase";
+import { Database } from "../../database/database";
+import { IRouter } from "../routes/router";
 export class ExpressApplication implements Application {
   private server: any;
   private databaseConnection: any;
-  constructor(){
+  constructor(
+    private readonly router: IRouter,
+    private readonly database: Database
+  ){
     this.server = express();
   }
   setupMiddlewares(): void {
@@ -23,10 +26,11 @@ export class ExpressApplication implements Application {
       this.server.use(helmet());
   }
   setupRouter(): void {
-      this.server.use(router);
+      this.server.use(this.router.getRouter());
   }
   setupDatabase(): void {
-    this.databaseConnection = databaseFactory()
+    this.database.init()
+    this.databaseConnection = this.database.getConnection()
 
   }
   start(): void {

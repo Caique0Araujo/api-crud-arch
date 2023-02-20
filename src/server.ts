@@ -1,4 +1,4 @@
-import { applicationFactory } from './main/factories/app/setServer';
+import { applicationFactory } from './main/factories/app/server';
 
 const app = applicationFactory();
 
