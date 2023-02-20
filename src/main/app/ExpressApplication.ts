@@ -9,6 +9,7 @@ dotenv.config();
 
 import { Database } from "../../database/database";
 import { IRouter } from "../routes/router";
+import { userRoutes } from "../routes/express-routes/user";
 export class ExpressApplication implements Application {
   private server: any;
   private databaseConnection: any;
@@ -27,6 +28,7 @@ export class ExpressApplication implements Application {
   }
   setupRouter(): void {
       this.server.use(this.router.getRouter());
+      this.router.setupRoutes('/user', userRoutes) // Configurar um arquivo com as rotas e carregar todas através de um map
   }
   setupDatabase(): void {
     this.database.init()
@@ -37,14 +39,14 @@ export class ExpressApplication implements Application {
     this.setupMiddlewares();
     this.setupRouter();
     this.setupDatabase();
+    const port = process.env.SERVER_PORT 
     if(!this.databaseConnection){
       this.server.listen( 
-        process.env.SERVER_PORT || 3000
+        port || 3000
       );
     }else{
-      this.databaseConnection.connection.sync()
+      this.databaseConnection.sync()
       .then(() => {
-          const port = process.env.SERVER_PORT
           this.server.listen( 
             port || 3000
           );

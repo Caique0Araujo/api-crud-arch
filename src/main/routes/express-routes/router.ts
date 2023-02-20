@@ -10,12 +10,11 @@ export class ExpressRouter implements IRouter {
      this.router = Router();
   }
 
-  setupRoutes(){
-    this.router.use('/user', userRoutes);
+  setupRoutes(endpoint: string, routes: Router){
+    this.router.use(endpoint, routes);
   }
 
   getRouter() {
-    this.setupRoutes()
     return this.router
   }
 } 

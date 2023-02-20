@@ -7,9 +7,9 @@ import SequelizeDatabase from "../../../database/sequelizeDatabase";
 export const applicationFactory = (): Application=>{
 
     if(serverConfiguration.type === 'express'){
-        return new ExpressApplication(new ExpressRouter(), new SequelizeDatabase());
+        if(serverConfiguration.database === 'sequelize')
+            return new ExpressApplication(new ExpressRouter(), new SequelizeDatabase());
     } else {
         throw Error('Framework web inválido')
     }
-
 }
