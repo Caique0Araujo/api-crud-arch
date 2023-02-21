@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { userRoutes } from "./user";
 import { IRouter } from "../router";
+import { routes } from "../../config/expressRoutes";
 
 export class ExpressRouter implements IRouter {
 
@@ -10,11 +10,13 @@ export class ExpressRouter implements IRouter {
      this.router = Router();
   }
 
-  setupRoutes(endpoint: string, routes: Router){
-    this.router.use(endpoint, routes);
+  setupRoutes(): void{
+    routes.map((route) => {
+      this.router.use(route.endpoint, route.router)
+    })
   }
 
-  getRouter() {
+  getRouter():Router {
     return this.router
   }
 } 

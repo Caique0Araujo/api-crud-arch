@@ -1,6 +1,5 @@
+import { IDatabase } from './database';
 import { Dialect, Sequelize } from 'sequelize'
-import { Database } from './database'
-
 import dotenv from 'dotenv'
 
 dotenv.config();
@@ -11,7 +10,7 @@ const dbHost = process.env.DB_HOST
 const dbDriver = 'mysql'
 const dbPassword = process.env.DB_PASSWORD
 
-class SequelizeDatabase implements Database {
+class SequelizeDatabase implements IDatabase {
 
   private connection: Sequelize;
 
@@ -23,6 +22,7 @@ class SequelizeDatabase implements Database {
         host: dbHost,
         dialect: dbDriver
       })
+      this.connection.sync();
   }
   getConnection(): Sequelize {
       return this.connection;

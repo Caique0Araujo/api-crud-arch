@@ -1,7 +1,7 @@
-import { Database } from "./database";
+import { IDatabase } from "./database";
 import SequelizeDatabase from "./sequelizeDatabase";
 
-export function databaseFactory(): Database{
+export function databaseFactory(): IDatabase{
   const database = new SequelizeDatabase();
   database.init();
   return database;
